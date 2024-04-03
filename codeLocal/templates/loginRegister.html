@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loginRegistrationSytles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h2>User Authentication</h2>
+    
+    <div class="formBox">
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" required><br>
+            <div class="container">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <!-- <i class="fa fa-fw fa-eye" id="passwordToggleLogin" toggle="#loginPassword"></i><br> -->
+                <span toggle="#loginPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span> 
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="loginStatus"></div>
+    </div>
+    
+    <div class="formBox">
+        <form id="registrationForm">
+            <input type="text" id="registerUsername" placeholder="Username" required><br>
+            <select id="accountType" name="accountType">
+                <option value="občan">Občan</option>
+                <option value="naročnik">Naročnik</option>
+                <option value="voznik pluga">Voznik pluga</option>
+                <option value="vodja izmene">Vodja izmene</option>
+                <!-- <option value="admin">Admin</option> -->
+            </select><br>
+            <div class="container">
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <!-- <i class="fas fa-eye" id="passwordToggleRegister" toggle="#registerPassword"></i><br> -->
+                <span toggle="#registerPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+            <div id="passwordStrength"></div> <!-- Added div with id passwordStrength -->
+            <button type="submit">Register</button>
+        </form>
+        <div id="registerStatus"></div>
+    </div>
+    <!-- <form action="/test" method="post">
+        <button type="submit">Test</button>
+    </form> -->
+    <script src="{{ url_for('static', filename='frontEndScript.js') }}"></script>
+</body>
+</html>
