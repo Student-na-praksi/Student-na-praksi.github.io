@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 
 import mysql.connector
 import bcrypt
-import logging
+import logging 
 
 connection = None
 
